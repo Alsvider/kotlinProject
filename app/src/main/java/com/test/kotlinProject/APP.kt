@@ -1,6 +1,7 @@
-package com.test
+package com.test.kotlinProject
 
 import android.app.Application
+import com.alibaba.android.arouter.launcher.ARouter
 
 /**
  * Created by wangch on 2021/6/11.
@@ -13,6 +14,7 @@ class  APP : Application() {
     }
     override fun onCreate() {
         super.onCreate()
-        instance=this
+        instance =this
+        ARouter.init(this)
     }
 }
