@@ -11,7 +11,7 @@ interface IView<out P : IPresenter<IView<P>>> {
 
     var presenter: @UnsafeVariance P
 
-    var context:Context
+    var contex:Context
 
     var activity:BaseActivity
 

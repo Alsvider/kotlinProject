@@ -9,12 +9,12 @@ import com.test.kotlinProject.bean.EventBean
  */
 abstract class BaseMVPActivity<P : BasePresenter<IView<P>>> : BaseActivity(), IView<P> {
     override lateinit var presenter: P
-    override lateinit var context: Context
+    override lateinit var contex: Context
     override lateinit var activity: BaseActivity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activity = this
-        context = this
+        contex = this
         presenter = createPresenter()
         presenter.view = this
     }

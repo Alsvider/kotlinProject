@@ -78,4 +78,14 @@ open class BaseActivity : AppCompatActivity() {
     protected fun showRightIcon(show: Boolean) {
         binding.imgRight.visibility = if (show) View.VISIBLE else View.INVISIBLE
     }
+
+
+    override fun onDestroy() {
+        if (this::class.java.isAnnotationPresent(BindEventBus::class.java)) {
+            EventBus.getDefault().unregister(this)
+        }
+
+        ARouter.getInstance().destroy()
+        super.onDestroy()
+    }
 }
