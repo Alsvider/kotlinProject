@@ -17,33 +17,32 @@ import java.util.zip.Inflater
  * Created by wangch on 2021/6/22.
  */
 open class BaseActivity : AppCompatActivity() {
-    private lateinit var binding: BaseIncludeToolbarBinding
-
+    lateinit var binding: BaseIncludeToolbarBinding
+    lateinit var view:View
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (this::class.java.isAnnotationPresent(BindEventBus::class.java)) {
             EventBus.getDefault().register(this)
         }
         ARouter.getInstance().inject(this);
-        initData()
-    }
-
-    override fun setContentView(view: View?) {
-        this.javaClass
         binding = BaseIncludeToolbarBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        var view = getLayoutId()?.let { layoutInflater.inflate(it, null) }
+         view = getLayoutId()?.let { layoutInflater.inflate(it, null) }!!
         binding.frameLayout.addView(view)
-        super.setContentView(view)
+        setContentView(binding.root)
+        initData()
+        initListener()
     }
 
-    protected open fun getLayoutId(): Int? = null
-
-
-    fun initData() {
+    protected open fun initListener() {
         binding.back.setOnClickListener {
             finish()
         }
+    }
+    protected open fun getLayoutId(): Int? = null
+
+
+    protected open fun initData() {
+
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

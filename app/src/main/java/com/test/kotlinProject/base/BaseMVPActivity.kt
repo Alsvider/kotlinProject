@@ -7,7 +7,7 @@ import com.test.kotlinProject.bean.EventBean
 /**
  * Created by wangch on 2021/6/16.
  */
-abstract class BaseMVPActivity<P : BasePresenter<IView<P>>> : BaseActivity(), IView<P> {
+abstract class BaseMVPActivity<P : IPresenter<IView<P>>> : BaseActivity(), IView<P> {
     override lateinit var presenter: P
     override lateinit var contex: Context
     override lateinit var activity: BaseActivity
@@ -17,7 +17,9 @@ abstract class BaseMVPActivity<P : BasePresenter<IView<P>>> : BaseActivity(), IV
         contex = this
         presenter = createPresenter()
         presenter.view = this
+
     }
+
 
     override fun getLayoutId(): Int? {
         return setLayoutID()

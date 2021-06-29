@@ -5,7 +5,7 @@ import com.test.kotlinProject.bean.EventBean
 /**
  * Created by wangch on 2021/6/16.
  */
-class BasePresenter<V:IView<IPresenter<V>>>: IPresenter<V> {
+open class BasePresenter<V:IView<IPresenter<V>>>: IPresenter<V> {
 
  override lateinit var view:V
 
