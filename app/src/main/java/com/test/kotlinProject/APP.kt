@@ -15,6 +15,10 @@ class  APP : Application() {
     override fun onCreate() {
         super.onCreate()
         instance =this
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog()
+            ARouter.openDebug()
+        }
         ARouter.init(this)
     }
 }

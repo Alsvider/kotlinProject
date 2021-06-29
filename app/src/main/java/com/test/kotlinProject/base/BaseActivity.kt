@@ -18,7 +18,7 @@ import java.util.zip.Inflater
  */
 open class BaseActivity : AppCompatActivity() {
     lateinit var binding: BaseIncludeToolbarBinding
-    lateinit var view:View
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (this::class.java.isAnnotationPresent(BindEventBus::class.java)) {
@@ -26,7 +26,7 @@ open class BaseActivity : AppCompatActivity() {
         }
         ARouter.getInstance().inject(this);
         binding = BaseIncludeToolbarBinding.inflate(layoutInflater)
-         view = getLayoutId()?.let { layoutInflater.inflate(it, null) }!!
+        var view = getLayoutId()?.let { layoutInflater.inflate(it, null) }
         binding.frameLayout.addView(view)
         setContentView(binding.root)
         initData()
@@ -38,6 +38,7 @@ open class BaseActivity : AppCompatActivity() {
             finish()
         }
     }
+
     protected open fun getLayoutId(): Int? = null
 
 
