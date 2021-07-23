@@ -1,7 +1,8 @@
-package com.test.kotlinProject
+package com.test.kotlinProject.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.test.kotlinProject.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

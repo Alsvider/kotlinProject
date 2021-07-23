@@ -16,8 +16,6 @@ class LoginActivity : BaseMVPActivity<ILoginPresenter>(), ILoginView {
         return R.layout.activity_login
     }
 
-
-
     override fun createPresenter(): ILoginPresenter {
         return LoginPresenter()
     }

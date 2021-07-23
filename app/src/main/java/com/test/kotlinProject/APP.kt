@@ -1,8 +1,8 @@
 package com.test.kotlinProject
 
 import android.app.Application
+import android.content.Context
 import com.alibaba.android.arouter.launcher.ARouter
-
 /**
  * Created by wangch on 2021/6/11.
  */
@@ -21,4 +21,6 @@ class  APP : Application() {
         }
         ARouter.init(this)
     }
+
+
 }

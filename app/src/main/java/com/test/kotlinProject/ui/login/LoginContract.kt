@@ -7,10 +7,10 @@ import com.test.kotlinProject.base.IView
  * Created by wangch on 2021/6/28.
  */
 
-interface ILoginView :IView<ILoginPresenter>{
+interface ILoginView : IView<ILoginPresenter> {
 
 }
 
-interface ILoginPresenter:IPresenter<ILoginView>{
-
+interface ILoginPresenter : IPresenter<ILoginView> {
+    fun login(name: String, password: String)
 }

@@ -17,7 +17,6 @@ abstract class BaseMvpFragment<P:IPresenter<IView<P>>>:BaseFragment(),IView<P> {
         super.onCreate(savedInstanceState)
         activity=requireActivity() as BaseActivity
         presenter = createPresenter()
-
         presenter.view = this
     }
 

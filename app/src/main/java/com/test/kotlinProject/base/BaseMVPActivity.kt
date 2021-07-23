@@ -17,7 +17,6 @@ abstract class BaseMVPActivity<P : IPresenter<IView<P>>> : BaseActivity(), IView
         contex = this
         presenter = createPresenter()
         presenter.view = this
-
     }
 
 
