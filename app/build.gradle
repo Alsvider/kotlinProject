@@ -23,7 +23,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('../test-kotlin-demo.jke')
+            storeFile file('./test-kotlin-demo.jks')
             storePassword '123456'
             keyAlias 'kotlinProject'
             keyPassword '123456'
@@ -108,4 +108,11 @@ dependencies {
     kapt 'com.alibaba:arouter-compiler:1.5.1'
     //eventbus
     implementation "org.greenrobot:eventbus:3.2.0"
+    //状态栏
+// 基础依赖包，必须要依赖
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+//    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+// kotlin扩展（可选）
+    implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
+
 }
