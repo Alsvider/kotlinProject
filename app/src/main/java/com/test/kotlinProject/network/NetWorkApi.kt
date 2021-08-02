@@ -1,6 +1,5 @@
 package com.test.kotlinProject.network
 
-import com.test.kotlinProject.bean.LoginBean
 import com.test.kotlinProject.bean.ResponseBean
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.Body
