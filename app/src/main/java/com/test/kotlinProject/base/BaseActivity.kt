@@ -16,7 +16,7 @@ import org.greenrobot.eventbus.ThreadMode
 /**
  * Created by wangch on 2021/6/22.
  */
-open class BaseActivity : AppCompatActivity() {
+open class BaseActivity : AppCompatActivity(){
 
     lateinit var binding: BaseIncludeToolbarBinding
     override fun onCreate(savedInstanceState: Bundle?) {
