@@ -26,8 +26,7 @@ open class BaseActivity : AppCompatActivity(){
         }
         ARouter.getInstance().inject(this);
         binding = BaseIncludeToolbarBinding.inflate(layoutInflater)
-        var view = getLayoutId()?.let { layoutInflater.inflate(it, null) }
-        binding.frameLayout.addView(view)
+        binding.frameLayout.addView(getLayoutView())
         setContentView(binding.root)
         //是否全屏
         if (applyFullScreen()) {
@@ -45,8 +44,9 @@ open class BaseActivity : AppCompatActivity(){
         }
     }
 
-    protected open fun getLayoutId(): Int? = null
 
+
+    protected open fun getLayoutView():View?=null
 
     protected open fun initData() {
 

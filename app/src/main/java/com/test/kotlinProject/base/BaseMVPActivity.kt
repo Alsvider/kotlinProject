@@ -2,6 +2,7 @@ package com.test.kotlinProject.base
 
 import android.content.Context
 import android.os.Bundle
+import android.view.View
 import com.test.kotlinProject.bean.EventBean
 
 /**
@@ -20,12 +21,11 @@ abstract class BaseMVPActivity<P : IPresenter<IView<P>>> : BaseActivity(), IView
     }
 
 
-    override fun getLayoutId(): Int? {
-        return setLayoutID()
+    override fun getLayoutView(): View? {
+        return setLayoutView()
     }
 
-
-    abstract fun setLayoutID(): Int
+    abstract fun setLayoutView(): View?
 
     abstract fun createPresenter(): P
 
